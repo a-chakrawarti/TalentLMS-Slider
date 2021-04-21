@@ -1,38 +1,118 @@
-.App {
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 80vw;
+  margin: 5rem auto 0;
+  height: 800px;
+}
+section {
+  /* margin: 3rem auto 0;
+  height: 600px;
+  max-width: 800px;
   text-align: center;
+  position: relative;
+  overflow: hidden; */
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heading {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.cards-container {
+  margin: 3rem auto 0;
+  display: flex;
+  margin: 3rem auto 0;
+  height: 600px;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  /* overflow: hidden; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cards {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  text-align: center;
+  margin: 1rem;
+  opacity: 0;
+}
+
+.cards img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #bcccdc;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cards h3 {
+  text-transform: uppercase;
+  color: #ba5d2c;
+  margin-bottom: 0.25;
+}
+
+.title {
+  text-transform: capitalize;
+  color: #324d67;
+}
+
+.cards p {
+  margin: 2rem auto 0;
+  color: #617d98;
+  line-height: 2;
+}
+
+.quote-icon {
+  color: #ba5d2c;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  background: #617d98;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 200px;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.next {
+  transform: translateX(100%);
+}
+
+.previous {
+  transform: translateX(-100%);
+}
+
+.current {
+  opacity: 1;
+  transform: translateX(0);
 }
