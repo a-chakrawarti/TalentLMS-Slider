@@ -10,7 +10,7 @@ const ReviewCards = ({ person, positionClass }) => {
       </div>
       <h3>{name}</h3>
       <p className="title">{title}</p>
-      <p>{quote}</p>
+      <p className="quote-text">{quote}</p>
       <div className="quote-icon">
         <FaQuoteRight />
       </div>

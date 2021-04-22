@@ -1,13 +1,34 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import data from "./components/data";
 import ReviewCards from "./components/ReviewCards";
 import ArrowComponent from "./components/ArrowComponent";
 
 function App() {
-  const [persons, setPersons] = useState(data);
+  const persons = data;
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const lastIndex = persons.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, persons]);
+
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      nextCard();
+    }, 3000);
+
+    return () => {
+      clearInterval(timeout);
+    };
+  }, [index]);
 
   const prevCard = () => {
     console.log("clicked");
